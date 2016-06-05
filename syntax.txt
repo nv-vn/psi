@@ -1,0 +1,77 @@
+=== PSI ===
+language made by haze.
+ 
+=== Basics ===
+== Comments
+-- single line comment
+
+-= multi
+   line 
+   comment =-  
+
+== Function declaration
+
+(scope) fn (name)(params) {
+    body
+}
+
+example \/
+
+from sys grab IO -- import statements, specific variables or classes etc
+-- could also be from sys grab * or from sys
+
+pv fn sayHello(username: String) {
+    IO.print("Hello, %username")
+}
+
+pb fn add(a: Int, b: Int) = Int {
+    a + b
+}
+
+== Anonymous functions
+-- where ls is a map of integers
+ls.map{|f| f * f} -- square
+ls.map{|f: Int| -> f * f} -- another square example 
+ls.map{|x| -> x as String} -- uses stringable trait to convert to a utf-8 encoded string
+ls.sort{|a, b| -> String.alphabet } -- static comparitor, abc123 , a > b, b > c, z > 0 etc
+
+== Structs
+-- tiny variable length stuff
+struct Rectangle {
+    x: Int
+    y: Int
+
+    -=
+    = return: the rectangle with self + other
+    = other: the other rectangle
+    =-
+    pb fn add(other: Rectangle) = Rectangle {
+        Rectangle(self.x + other.x, self.y + other.y)
+    } 
+
+    -= 
+    = return: the rectangle with self - other
+    = other: the other rectangle
+    =- 
+    pb fn sub(other: Rectangle) {
+        Rectangle(self.x - other.x, self.y - other.y)
+    }
+
+}
+
+== Traits
+
+struct [conv<string>] Animal {
+    name: string
+    age: int
+    
+    tr conv<string> { "%name, age: %age" } -- giving this struct a trait, the ability to be converted to a string.
+
+}
+
+struct Dog ^ Animal {
+    fleas: int
+    tr conv<string> { "%{conv<string>} fleas: %fleas" } -- overriding already overridden traits. 
+}
+
+
