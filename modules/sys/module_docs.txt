@@ -5,8 +5,14 @@ IO :: A Struct that represents general streams...
 readLine() = string
 readChar() = char
 
-print(str: String) -- Print str to the output stream with a newline
-printReal(str: String) -- Print str without newline (? name up for eval ?)
+println(str: string) -- Print str to the output stream with a newline
+print(str: string) -- Print str without newline (? name up for eval ?)
+
+println(ch: char) -- Print char to the output stream
+print(ch: char) -- Print char to the output stream, no newline.
+
+prompt(ques: string) = string -- basically just print(quest) and return readLine().
+
 
 exec(str: String) - int -- calls the system shell with str and returns the exit code
 

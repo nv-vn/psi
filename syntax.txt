@@ -20,13 +20,25 @@ example \/
 from sys grab IO -- import statements, specific variables or classes etc
 -- could also be from sys grab * or from sys
 
-pv fn sayHello(username: String) {
+pv fn sayHello(username: string) {
     IO.print("Hello, %username")
 }
 
-pb fn add(a: Int, b: Int) = Int {
+pb fn add(a: int, b: int) = int {
     a + b
 }
+
+-- you can omit return values, they are inferred.
+pb fn add(a: int, b: int) { a + b }
+
+-- you can also replace function names for operators.
+pb fn (T)|>(f(x: T) = T) = T { f(x) } 
+ -- 1 |> {|x| + 15}  equates to 16
+ -= <stolen var and val :> >
+    var x = 15 |> {|x| x + 15}
+    var z = x |> {|x| -> x / 2}
+    var y = 15 == z -- equates to true.
+ =- 
 
 == Anonymous functions
 -- where ls is a map of integers
