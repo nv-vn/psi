@@ -50,8 +50,8 @@ ls.sort{|a, b| -> String.alphabet } -- static comparitor, abc123 , a > b, b > c,
 == Structs
 -- tiny variable length stuff
 struct Rectangle {
-    x: Int
-    y: Int
+    x: int
+    y: int
 
     -=
     = return: the rectangle with self + other
@@ -86,4 +86,37 @@ struct Dog ^ Animal {
     tr conv<string> { "%{conv<string>} fleas: %fleas" } -- overriding already overridden traits. 
 }
 
+== Variables
+
+-- variables that are not encased within a struct class etc must be declared using val and var.
+-- val = value, non changing
+-- var = variable, which varies.
+
+val x: string = "Hello"
+val y: string -- empty?
+val z: = "Hello"
+var a = 15
+a++
+println(a) -- 16
+
+== Types
+
+-- primitive types are always lowercase.
+-- string, int, double, char and bool
+
+-- there are some core types like
+-- either, pair, the collections and range
+-- to see documentation on these types see modules/core
+
+== Parameter Predicates
+
+-- you are able to put predicates on function parameters to reduce the amount of if checks, like perl6.
+
+pb fn div(a: int, bi: int | [b > 0]) {...} -- divide function that can avoid a divide-by-zero error.
+-- these can throw two types of exceptions, compiler errors and runtime errors.
+-- lets say we have constant x set to 0.
+val x: int -- default value is 0
+-- if we try and use it in our div function, the compiler will tell us that x is 0 and fails to meet the predicates requirements.
+-- you are also allowed to have multiple predicates
+pb fn thing(str: string | [str.len > 15, str.len < 30]) -- strings are immutable, so their lengths are fixed.
 
