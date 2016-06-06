@@ -5,5 +5,5 @@
 Have an idea for the language? Propose it with a PR!
 
 ## Team
-*haze* concept
-*nv* compiler
+- **haze** concept
+- **nv** compiler
