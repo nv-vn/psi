@@ -1,0 +1,11 @@
+== Core module -- imported everywhere cause ya
+-- contains core types
+== String 
+-- in reality, is an array of Chars.
+-- really coool feature, range notation
+val x = "Hello"
+-- now lets say we wanted just the o.
+-- we could do, 
+val o = x[4..] -- x.. means x until the end of the string, x.length.
+-- want just the o CHARACTER?
+val oChar = x[4] -- simple, grab the character at the 4th index

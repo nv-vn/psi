@@ -5,5 +5,9 @@
 Have an idea for the language? Propose it with a PR!
 
 ## Team
-- **haze** concept
-- **nv** compiler
+- **haze** concept, compiler
+
+## Communication
+We have an IRC Channel!
+Please connect to #psi on Rizon to talk to users who are helping make psi a reality!
+To connect, use your favorite irc client, or click [here](http://chat.mibbit.com/?channel=%23psi&server=irc.rizon.io)!
