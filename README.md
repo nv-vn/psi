@@ -5,7 +5,8 @@
 Have an idea for the language? Propose it with a PR!
 
 ## Team
-- **haze** concept, compiler
+- **haze**
+- **nv**
 
 ## Communication
 We have an IRC Channel!
